@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "vite": "^8.1.5"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}
