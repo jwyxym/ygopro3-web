@@ -25,7 +25,18 @@ const lists = [
         'YGOPro3-windows-aarch64.exe',
         'YGOPro3-windows-aarch64.msi',
     ]],
-    ['Android', ['YGOPro3.apk']],
+    ['Android-arm64-v8a', [
+        'YGOPro3-arm64-v8a.apk',
+    ]],
+    ['Android-armeabi-v7a', [
+        'YGOPro3-armeabi-v7a.apk',
+    ]],
+    ['Android-x86', [
+        'YGOPro3-x86.apk',
+    ]],
+    ['Android-x86_64', [
+        'YGOPro3-x86_64.apk',
+    ]],
 ]
 
 const getFileName = (entry) => entry.split('/').pop()
