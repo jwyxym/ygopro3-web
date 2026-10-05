@@ -41,7 +41,20 @@ const lists = [
 
 const getFileName = (entry) => entry.split('/').pop()
 
-const getDownloadUrl = (entry) => `https://ygopro3.cn-nb2.rains3.com/${entry}`
+const cnMainlandTz = [
+    'Asia/Shanghai',
+    'Asia/Beijing',
+    'Asia/Chongqing',
+    'Asia/Harbin',
+    'Asia/Urumqi',
+    'Asia/Kashgar',
+    'PRC'
+];
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const lang = navigator.language || '';
+
+const getDownloadUrl = (entry) => `${lang.toLowerCase().startsWith('zh-cn') && cnMainlandTz.includes(tz)
+	? 'https://ygopro3.cn-nb2.rains3.com' : 'https://s3.ygopro3.cn/ygopro3'}/${entry}`
 
 const container = document.getElementById('download-list')
 
