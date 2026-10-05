@@ -16,6 +16,19 @@ function stripHtmlWhiteSpace(html: string): string {
 
 export default defineConfig({
   plugins: [
+		{
+			name: 'main-script-module-for-build',
+			apply: 'build',
+			transformIndexHtml: {
+				order: 'pre',
+				handler(html) {
+					return html.replace(
+						'<script src="./main.js"></script>',
+						'<script src="./main.js" type="module" defer></script>',
+					)
+				},
+			},
+		},
     viteSingleFile(),
     {
       name: 'rename-index-html-to-htm',
