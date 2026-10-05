@@ -41,7 +41,7 @@ const lists = [
 
 const getFileName = (entry) => entry.split('/').pop()
 
-const getDownloadUrl = (entry) => `https://s3.ygopro3.cn/ygopro3/${entry}`
+const getDownloadUrl = (entry) => `https://ygopro3.cn-nb2.rains3.com/${entry}`
 
 const container = document.getElementById('download-list')
 
