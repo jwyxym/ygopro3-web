@@ -41,7 +41,7 @@ const lists = [
 
 const getFileName = (entry) => entry.split('/').pop()
 
-const getDownloadUrl = (entry) => `./files/${entry}`
+const getDownloadUrl = (entry) => `https://s3.ygopro3.cn/ygopro3/${entry}`
 
 const container = document.getElementById('download-list')
 
@@ -74,7 +74,7 @@ for (const [platform, files] of lists) {
     container.appendChild(card)
 }
 
-fetch('https://s3-1.nexusmc.cn/ygopro3/version.txt')
+fetch('https://s3.ygopro3.cn/ygopro3/version.txt')
     .catch(e => console.error(e))
     .then(i => i.text())
     .then(i => {
