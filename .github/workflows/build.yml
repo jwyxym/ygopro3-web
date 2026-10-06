@@ -38,3 +38,17 @@ jobs:
         remote_path: ${{ secrets.SSH_PATH }}
         sftp_only: true
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+  flush-cdn:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jwyxym/jwyxym/aliyun-esa-cache@master
+        with:
+          access_key_id: ${{ secrets.ESA_ID }}
+          access_key_secret: ${{ secrets.ESA_KEY }}
+          site_id: ${{ secrets.ESA_SITE_ID }}
+          url_target: ${{ secrets.ESA_URL }}
+          flush_type: "directory"
