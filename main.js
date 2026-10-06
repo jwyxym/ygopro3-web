@@ -50,11 +50,10 @@ const cnMainlandTz = [
     'Asia/Kashgar',
     'PRC'
 ];
-const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-const lang = navigator.language || '';
 
-const getDownloadUrl = (entry) => `${lang.toLowerCase().startsWith('zh-cn') && cnMainlandTz.includes(tz)
-	? 'https://ygopro3.cn-nb2.rains3.com' : 'https://s3.ygopro3.cn/ygopro3'}/${entry}`
+const url = () => Math.random() < 0.5 ? 'https://s3.edgeone.ygopro3.cn/ygopro3' : 'https://s3.ygopro3.cn/ygopro3';
+
+const getDownloadUrl = (entry) => `${url()}/${entry}`;
 
 const container = document.getElementById('download-list')
 
