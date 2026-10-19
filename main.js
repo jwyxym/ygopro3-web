@@ -51,9 +51,7 @@ const cnMainlandTz = [
     'PRC'
 ];
 
-const url = () => Math.random() < 0.5 ? 'https://s3.edgeone.ygopro3.cn/ygopro3' : 'https://s3.ygopro3.cn/ygopro3';
-
-const getDownloadUrl = (entry) => `${url()}/${entry}`;
+const getDownloadUrl = (entry) => `https://s3.ygopro3.cn/ygopro3/${entry}`;
 
 const container = document.getElementById('download-list')
 
